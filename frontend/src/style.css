@@ -1,0 +1,12 @@
+body {
+    padding: 24px 48px;
+    background-color: #f8f8f8;
+}
+
+.Mui-selected{
+    color: beige !important;
+}
+
+#main {
+    background-color: #f0f0f0;
+}
