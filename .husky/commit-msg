@@ -1,17 +1,27 @@
 #!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/husky.sh"
 
-commit_msg_file = $1
-commit_msg = $(cat "$commit_msg_file")
-
-echo "Validating commit message format ...."
-
-# Format -  JIRA-story : Message start with capital letter
-if ! echo "$commit_msg" | grep -qE "^[A-Z]+-[0-9]+: [A-Z].{1,100}$"; then
-    echo "Invalid commit message format"
-    echo ""
-    echo "Expected - JIRA-story : Message start with capital letter."
+commit_msg_file="$1"
+echo "commit msg file path : $1"
+if [ -z "$commit_msg_file" ]; then
+    echo  "No commit msg file path"
     exit 1
 fi
 
-echo "Valid Commit message"
+if [ ! -f "$commit_msg_file" ]; then
+    echo  "File not found"
+    exit 1
+fi
+
+commit_msg=$(cat "$commit_msg_file")
+regex="^[A-Z]\+-[0-9]\+: .\+"
+
+echo "Commit msg is: $commit_msg"
+
+if echo "$commit_msg" | grep -qE "$regex"; then
+    echo "Commit message passed"
+    exit 1
+else 
+    echo "Invalid commit message"
+    echo 1
+fi

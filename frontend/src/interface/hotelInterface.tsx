@@ -1,6 +1,6 @@
 export interface HotelSearch {
-    initialCity? : string,
-    initialCheckIn? : string,
-    initialCheckOut? : string,
-    initialGuests? : number
+  initialCity?: string;
+  initialCheckIn?: string;
+  initialCheckOut?: string;
+  initialGuests?: number;
 }

@@ -9,12 +9,17 @@
     "lint:frontend": "cd frontend && npm run lint",
     "lint:backend": "cd backend && npm run lint",
     "lint:all": "npm run lint:frontend && npm run lint:backend",
-    "format": "prettier --check"
-  } ,
+    "format": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx}\""
+  },
   " keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2"
+  },
+  "dependencies": {
+    "eslint": "^9.32.0"
   }
 }
