@@ -20,5 +20,5 @@ A -- React components triggers events like page load / CTA clicked / link visted
 B -- All data we push to adobe data layer window.adobeDataLayer <!-- Front end work ends here -->
 C -- Adobe Launch Listens
 D -- Fires the analytic event
-E -- adobe analytics recieves and store on cloud
+E -- adobe analytics recieves and store on cloud        
 F -- Analyst build reports in workspace

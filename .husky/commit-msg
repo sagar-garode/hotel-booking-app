@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/h"
+
+commit_msg_file = $1
+commit_msg = $(cat "$commit_msg_file")
+
+echo "Validating commit message format ...."
+
+# Format -  JIRA-story : Message start with capital letter
+if ! echo "$commit_msg" | grep -qE "^[A-Z]+-[0-9]+: [A-Z].{1,100}$"; then
+    echo "Invalid commit message format"
+    echo ""
+    echo "Expected - JIRA-story : Message start with capital letter."
+    exit 1
+fi
+
+echo "Valid Commit message"
