@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces" : ["frontend", "backend"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
@@ -10,12 +11,14 @@
     "lint:backend": "cd backend && npm run lint",
     "lint:all": "npm run lint:frontend && npm run lint:backend",
     "format": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
-    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx}\""
+    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
+    "start": "concurrently \"npm run dev --workspace backend\" \"npm start --workspace frontend\""
   },
   " keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "husky": "^9.1.7",
     "prettier": "^3.6.2"
   },
