@@ -14,14 +14,14 @@ if [ ! -f "$commit_msg_file" ]; then
 fi
 
 commit_msg=$(cat "$commit_msg_file")
-regex="^[A-Z]\+-[0-9]\+: .\+"
+regex=/^JIRA-\d{5}: .{10,}/
 
 echo "Commit msg is: $commit_msg"
 
 if echo "$commit_msg" | grep -qE "$regex"; then
     echo "Commit message passed"
-    exit 1
+    echo 1
 else 
     echo "Invalid commit message"
-    echo 1
+    exit 1
 fi
