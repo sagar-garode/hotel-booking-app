@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "workspaces" : ["frontend", "backend"],
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "lint:frontend": "cd frontend && npm run lint",
-    "lint:backend": "cd backend && npm run lint",
-    "lint:all": "npm run lint:frontend && npm run lint:backend",
+    "lint:all": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"backend/**/*.{ts,tsx,js,jsx}\" --fix",
     "format": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
     "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "start": "concurrently \"npm run dev --workspace backend\" \"npm start --workspace frontend\""
@@ -18,11 +19,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
     "concurrently": "^9.2.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
     "husky": "^9.1.7",
     "prettier": "^3.6.2"
-  },
-  "dependencies": {
-    "eslint": "^9.32.0"
   }
 }
