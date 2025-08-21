@@ -6,3 +6,11 @@ npm run lint:all
 
 echo "Running prettier checks .."
 npm run format
+
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+    echo "Eslint Failed : fix errors before commit"
+    exit 1
+fi
+
+echo "Eslint passed !"
