@@ -13,4 +13,4 @@ if [ $RESULT -ne 0 ]; then
     exit 1
 fi
 
-echo "Eslint passed !"
+echo "Eslint passed !!"
