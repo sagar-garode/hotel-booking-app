@@ -9,13 +9,13 @@ module.exports = [
     files : ["**/*.{js,jsx,ts,tsx}"],
     languageOptions : {
       ecmaVersion : "latest",
-      sourceType: "module",
+      sourceType: "module", 
     },
     rules : {
       ...js.configs.recommended.rules,
       "no-unused-vars" : "warn",
       "no-undef": "error",
-      "no-console": "warn",
+      "no-console": "off",
     }
   },
 
@@ -38,7 +38,8 @@ module.exports = [
         ecmaFeatures :  { jsx : true }
       },
       globals: { 
-        ...globals.browser
+        ...globals.browser,
+        ...globals.node
       }
     },
     rules : {

@@ -28,7 +28,7 @@ router.put("/:id", async (req, res) => {
       new: true,
     });
     if (!room) return res.json("Room not found");
-    res.status(201).json(user);
+    res.status(201).json(room);
   } catch (e) {
     res.status(500).json("NOt Found");
   }

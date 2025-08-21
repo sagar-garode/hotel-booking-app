@@ -48,8 +48,6 @@ app.get("/", (req, res) => {
 });
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
-  console.log("Database connected !!");
   app.listen(process.env.PORT, () => {
-    console.log(`Server started om ${process.env.PORT}`);
   });
 });

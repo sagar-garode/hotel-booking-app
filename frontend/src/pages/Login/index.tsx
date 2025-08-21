@@ -49,8 +49,8 @@ const Login: React.FC = () => {
         });
         navigate("/bookHotels");
       }
-    } catch (e) {
-      setServerError("Login Failed");
+    } catch (err) {
+      setServerError(`Login Failed : ${err}`);
     }
   };
 

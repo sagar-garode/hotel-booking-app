@@ -4,9 +4,6 @@
 echo "Running lint checks .."
 npm run lint:all
 
-echo "Running prettier checks .."
-npm run format
-
 RESULT=$?
 if [ $RESULT -ne 0 ]; then
     echo "Eslint Failed !! : fix errors before commit"
@@ -14,3 +11,6 @@ if [ $RESULT -ne 0 ]; then
 fi
 
 echo "Eslint passed !!"
+
+echo "Running prettier checks .."
+npm run format:fix

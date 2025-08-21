@@ -6,7 +6,6 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const user = new User(req.body);
-    console.log("1111111111", user);
     await user.save();
     res.status(201).json(user);
   } catch (e) {
