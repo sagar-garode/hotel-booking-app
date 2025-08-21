@@ -14,7 +14,10 @@ const App = () => {
   const auth = useContext(AuthContext);
   const theme = useContext(ThemeContext);
 
-  const handleToogleChange = () => theme?.theme === "light" ? theme?.setTheme("dark") : theme?.setTheme("light");
+  const handleToogleChange = () =>
+    theme?.theme === "light"
+      ? theme?.setTheme("dark")
+      : theme?.setTheme("light");
 
   const mainCssStyle = {
     backgroundColor: theme?.theme === "light" ? "white" : "black",
