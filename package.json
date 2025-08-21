@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "lint:all": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"backend/**/*.{ts,tsx,js,jsx}\" --fix",
+    "lint:all": "eslint \"frontend/**/*.{ts,tsx,js,jsx}\" \"backend/**/*.{ts,tsx,js,jsx}\"",
     "format": "prettier --check \"**/*.{ts,tsx,js,jsx}\"",
     "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "start": "concurrently \"npm run dev --workspace backend\" \"npm start --workspace frontend\""

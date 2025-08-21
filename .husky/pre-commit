@@ -9,7 +9,7 @@ npm run format
 
 RESULT=$?
 if [ $RESULT -ne 0 ]; then
-    echo "Eslint Failed : fix errors before commit"
+    echo "Eslint Failed !! : fix errors before commit"
     exit 1
 fi
 
